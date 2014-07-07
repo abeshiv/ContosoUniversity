@@ -62,8 +62,7 @@ namespace ContosoUniversity.Controllers
             int pageNumber = (page ?? 1);
             return View(students.ToPagedList(pageNumber, pageSize));
 
-
-            return View(students.ToList());
+            //return View(students.ToList());
         }
 
         // GET: Student/Details/5
