@@ -146,5 +146,21 @@ namespace ContosoUniversity.Controllers
             }
             base.Dispose(disposing);
         }
+        // GET: Course/UpdateCourseCredits/6
+        public ActionResult UpdateCourseCredits()
+        {
+            return View();
+        }
+
+        // POST: Course/UpdateCourseCredits/6
+        [HttpPost]
+        public ActionResult UpdateCourseCredits(int? multiplier)
+        {
+            if (multiplier != null)
+            {
+                ViewBag.RowsAffected = db.Database.ExecuteSqlCommand("UPDATE Course SET Credits = Credits * {0}", multiplier);
+            }
+            return View();
+        }
     }
 }
